@@ -1,0 +1,77 @@
+##= Window Manager =##
+
+# quit or restart bspwm 
+alt + shift + {q,r}
+	bspc {quit,wm -r} 
+
+# reload sxhkd
+alt + Escape
+	pkill -USR1 -x sxhkd
+
+# close and kill apps
+ctrl + {shift + ,alt + }q
+    bspc node -{c,k}
+
+##= Application =##
+
+# terminal emulator
+alt + Return
+	kitty
+
+# program launcher
+alt + r
+    rofi -show drun -show-icons
+
+# browser
+alt + b
+	firefox
+
+# file manager
+alt + p
+    pcmanfm
+
+##= Special =##
+alt + {minus,equal}
+    amixer set Master 5%{-,+} unmute
+
+alt + 0
+    amixer set Master {_,um}mute
+
+alt + Print 
+    scrot & dunstify "Screenshot capture" 
+
+##= Focus / Swap =##
+
+# swap the current node
+alt + shift + Return
+    bspc node -s last.local
+
+# focus the next/previous desktop 
+alt + {1,2,3,4,5}
+	bspc desktop -f {1,2,3,4,5}
+
+# focus the node in given direction
+alt + {Left, Down, Up, Right}
+	bspc node -f {west, south, north, east}
+
+##= Move / Resize =##
+
+# expand window outward
+alt + shift + {Left, Down, Up, Right}
+    bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+
+# expand window inward 
+alt + ctrl + shift + {Left, Down, Up, Right}
+    bspc node -z {right -20 0, top 0 20, bottom 0 -20, left 20 0}
+
+##= State / Flags =##
+
+# set the window state
+alt + {t, f, g}
+    bspc node -t {tiled, floating, fullscreen}
+
+# set the node flags to "sticky"
+alt + y
+    bspc node -g sticky
+
+
