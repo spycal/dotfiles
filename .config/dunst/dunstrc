@@ -1,0 +1,22 @@
+
+[global]
+width = 280
+height = 200
+offset = 20x57
+notification_limit = 5
+background = "#141B1E"
+foreground = "#DADADA"
+font = Iosevka 11
+frame_width = 2 
+icon_theme = Papirus-Dark
+icon_path = /usr/share/icons/Papirus-Dark/24x24/status/:/usr/share/icons/Papirus-Dark/24x24/devices
+browser = /usr/bin/firefox
+
+[urgency_low]
+frame_color = "#232A2D"
+
+[urgency_normal]
+frame_color = "#67B0E8"
+
+[urgency_critical]
+frame_color = "#EF7D7D"
