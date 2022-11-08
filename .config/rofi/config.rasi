@@ -1,0 +1,110 @@
+
+configuration {
+    display-run: "run: ";
+    display-window: "window: ";
+    display-drun: "run: ";
+    modi: "window,run,drun";
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #141B1E;
+    fg: #DADADA;
+    bg-alt: #232A2D;
+    fg-alt: #BDC3C2;
+    contrast: #161D1E;
+    
+    white: #dadada;
+    black: #1e2528;
+    lighter-black: #1d2426;
+    red: #e57474;
+    pink: #ee9cdd;
+    purple: #c47fd5;
+    blue: #67b0e8;
+    cyan: #6cbfbf;
+    teal: #8ad8ef;
+    green: #8ccf7e;
+    lime: #9effb0;
+    yellow: #e5c76b;
+    orange: #fcb163;
+    grey:  #a8afb2;
+    lavender: #bab3e5;
+    sky-blue: #5db7cb;
+
+    background-color: @bg;
+    text-color: @fg;
+    spacing: 0;
+    font: "Iosevka SemiBold 11";
+}
+
+window {
+    width: 300px 480px;
+    location: north west;
+    x-offset: 20;
+    y-offset: 55;
+    border: 1px;
+    border-color: @bg-alt;
+}
+
+mainbox {
+    children: [inputbar, listview];
+    padding: 13px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    padding: 5px;
+}
+
+#prompt {  
+    font: "Iosevka bold 11";
+    text-color: @blue;
+    background-color: @bg-alt;
+    padding: 6 0 6 10; // top right bottom left
+    border-radius: 15 0 0 15;
+}
+
+entry {
+    font: "Iosevka bold 11";
+    background-color: @bg-alt; 
+    placeholder: "type something...";
+    placeholder-color: @grey;
+    padding: 6px 0px;
+    border-radius: 0 15 15 0;
+}
+
+listview {
+    lines: 10;
+    padding: 5px;
+    scrollbar: true;
+}
+
+element {
+    padding: 4px 0px;
+}
+
+element-icon {
+    size: 28;
+    padding: 4px 6px;
+}
+
+element-text {
+    highlight: @red;
+    padding: 8px 3px;
+}
+
+element-icon selected {
+    background-color: @bg-alt;
+}
+
+element-text selected {
+    background-color: @bg-alt;
+}
+
+scrollbar {
+    handle-width: 0px 4px;
+    handle-color: @green;
+    border: 8px;
+}
+

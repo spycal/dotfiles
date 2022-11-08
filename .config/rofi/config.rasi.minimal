@@ -1,0 +1,73 @@
+
+configuration {
+    display-run: "run: ";
+    display-window: "window: ";
+    display-drun: "run: ";
+    modi: "window,run,drun";
+    font: "Iosevka 11";
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #141B1E; 
+    fg: #B3B9B8;
+    bc: #161D1F; // border color
+ 
+    bg-sel: @bg; // selected bg
+    fg-sel: #DADADA; // selected fg
+    fg-alt: #232A2D; 
+    special: #E57474; // red
+
+    background-color: @bg;
+    text-color: @fg;
+    spacing: 0;
+}
+
+window {
+    width: 300px 480px;
+    border: 2px;
+    border-color: @bc;
+    border-radius: 0px;
+}
+
+mainbox {
+    children: [inputbar, listview];
+    padding: 6px;
+}
+
+inputbar {
+   children: [prompt, entry];
+}
+
+entry {
+    placeholder: "type something...";
+    placeholder-color: @fg-alt;
+}
+
+listview {
+    padding: 5px;
+    lines: 11;
+    scrollbar: true;
+}
+
+element-text {
+  highlight: @special;  
+}
+
+element-text selected {
+    font: "Iosevka 11 bold"
+    text-color: @fg-sel;
+    background-color: @bg-sel;
+}
+
+element-icon {
+    size: 14;
+    padding: 0px 4px;
+}
+
+scrollbar {
+    handle-width: 3px;
+    handle-color: @fg-alt;
+}
+
