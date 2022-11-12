@@ -1,0 +1,57 @@
+
+env:
+  TERM: xterm-256color
+
+window:
+  padding: 
+    x: 14
+    y: 14
+
+font:
+  normal: 
+    family: Iosevka Nerd Font 
+    style: Regular
+  bold:
+    family: Iosevka Nerd Font
+    style: Bold
+  italic: 
+    family: Victor Mono Nerd Font
+    style: Italic
+  bold_italic:
+    family: Victor Mono Nerd Font
+    style: Bold Italic
+
+  size: 11.5
+
+schemes: 
+  Everblush: &Everblush
+    primary:
+      background: '#141B1E'
+      foreground: '#DADADA'
+    cursor: 
+      text: CellBackground
+      cursor: CellForeground
+    selection:
+      text: CellForeground
+      background: CellBackground
+    normal: 
+      black: '#3B4244'
+      red: '#EF7D7D'
+      green: '#6BC568'
+      yellow: '#F4D67A'
+      blue: '#71BAF2'
+      magenta: '#CE89DF'
+      cyan: '#67CBE7'
+      white: '#BDC3C2'
+    bright:
+      black: '#232A2B'
+      red: '#E57474'
+      green: '#8CCF7E'
+      yellow: '#E5C76B'
+      blue: '#67B0E8'
+      magenta: '#C47ED5'
+      cyan: '#6CDFDF'
+      white: '#B3B9B8'
+
+colors: *Everblush
+

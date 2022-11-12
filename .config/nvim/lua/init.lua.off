@@ -84,6 +84,12 @@ keymap.set("n", "<A-Tab>", ":BufferLineCycleNext<CR>")
 --- null-ls ---
 keymap.set("n", "ff", ":lua vim.lsp.buf.format()<CR>", { silent = true })
 
+------ Diagnostic ------
+vim.api.nvim_command[[sign define DiagnosticSignError text= texthl=DiagnosticSignError]]
+vim.api.nvim_command[[sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn]]
+vim.api.nvim_command[[sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo]]
+vim.api.nvim_command[[sign define DiagnosticSignHint text= texthl=DiagnosticSignHint]]
+
 ------ Appearance ------
 local colors = require("everblush.core").get_colors()
 require("everblush").setup({
@@ -140,10 +146,6 @@ require("bufferline").setup({
 	options = {
 		mode = "buffers",
 		diagnostic = "nvim_lsp",
-		modified_icon = "+",
-		show_buffer_icons = false,
-		show_buffer_close_icons = false,
-		show_close_icon = false,
 		show_tab_indicators = false,
 		offsets = {
 			{
@@ -165,7 +167,7 @@ require("null-ls").setup({
 	sources = {
 		require("null-ls").builtins.formatting.stylua,
 		require("null-ls").builtins.formatting.prettierd,
-		require("null-ls").builtins.formatting.rufo,
+        require("null-ls").builtins.diagnostics.rubocop
 	},
 })
 

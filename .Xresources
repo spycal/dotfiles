@@ -1,0 +1,45 @@
+
+URxvt.perl-lib: /usr/lib/urxvt/perl
+URxvt.perl-ext-common: default,url-select
+
+URxvt.font: xft:Iosevka:style=regular:pixelsize=14.5
+URxvt.boldFont: xft:Iosevka:style=bold:pixelsize=14.5
+URxvt.italicFont: xft:Iosevka:style=italic:pixelsize=14.5
+URxvt.boldItalicFont: xft:Iosevka:style=italic:pixelsize=14.5
+
+*.foreground: #DADADA
+*.background: #141B1E
+*.cursorColor: #DADADA 
+
+*.color0: #3B4244
+*.color1: #EF7D7D
+*.color2: #6BC568
+*.color3: #F4D67A
+*.color4: #71BAF2
+*.color5: #CE89DF
+*.color6: #67CBE7
+*.color7: #BDC3C2
+
+*.color8: #232A2B
+*.color9: #E57474
+*.color10: #8CCF7E
+*.color11: #E6C76B
+*.color12: #67B0E8
+*.color13: #C47ED5
+*.color14: #6CDFDF
+*.color15: #B3B9B8
+
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.internalBorder: 14
+URxvt.cursorBlink: true
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.iso14755: false
+
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlBotton: 1
