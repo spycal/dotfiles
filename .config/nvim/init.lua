@@ -13,7 +13,7 @@ require("packer").startup(function(use)
 
 	--- productivity ---
 	use("windwp/nvim-autopairs")
-	use("nvim-tree/nvim-tree.lua")
+    use("nvim-telescope/telescope.nvim")
 	use("akinsho/bufferline.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("nvim-lua/plenary.nvim")
@@ -43,7 +43,7 @@ set.encoding = "UTF-8"
 set.cursorline = true
 set.splitright = true
 set.splitbelow = true
-set.shell = zsh
+set.shell = "zsh"
 set.scrolloff = true
 set.laststatus = 2
 
@@ -74,12 +74,12 @@ keymap.set("n", "w<right>", "<C-w>l")
 --- colorizer ---
 keymap.set("n", "co", ":ColorizerToggle<CR>")
 
---- nvim-tree ---
-keymap.set("n", "<C-t>", ":NvimTreeToggle<CR>", { silent = true })
-keymap.set("n", "<C-f>", ":NvimTreeFocus<CR>", { silent = true })
+--- telescope.nvim ---
+keymap.set("n", "<C-f>", ":lua require'telescope.builtin'.find_files()<CR>", { silent = true })
+keymap.set("n", "<C-d>", ":lua require'telescope.builtin'.diagnostics()<CR>", { silent = true })
 
 --- bufferline ---
-keymap.set("n", "<A-Tab>", ":BufferLineCycleNext<CR>")
+keymap.set("n", "<C-Tab>", ":BufferLineCycleNext<CR>")
 
 --- null-ls ---
 keymap.set("n", "ff", ":lua vim.lsp.buf.format()<CR>", { silent = true })
@@ -89,6 +89,7 @@ vim.api.nvim_command[[sign define DiagnosticSignError text= texthl=Diagnostic
 vim.api.nvim_command[[sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn]]
 vim.api.nvim_command[[sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo]]
 vim.api.nvim_command[[sign define DiagnosticSignHint text= texthl=DiagnosticSignHint]]
+vim.diagnostic.config({ virtual_text = false })
 
 ------ Appearance ------
 local colors = require("everblush.core").get_colors()
@@ -123,24 +124,7 @@ require("nvim-autopairs").setup({
 	disable_filetype = {},
 })
 
-require("nvim-tree").setup({
-	sort_by = "case_sensitive",
-	hijack_cursor = true,
-	view = {
-		width = 21,
-	},
-	renderer = {
-		full_name = true,
-		icons = {
-			show = {
-				file = false,
-				folder = false,
-				folder_arrow = false,
-				git = false,
-			},
-		},
-	},
-})
+require("telescope").setup()
 
 require("bufferline").setup({
 	options = {

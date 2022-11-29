@@ -13,10 +13,10 @@ icon_path = /usr/share/icons/Papirus-Dark/24x24/status/:/usr/share/icons/Papirus
 browser = /usr/bin/firefox
 
 [urgency_low]
-frame_color = "#232A2D"
+frame_color = "#141B1E"
 
 [urgency_normal]
-frame_color = "#67B0E8"
+frame_color = "#232A2D"
 
 [urgency_critical]
 frame_color = "#EF7D7D"

@@ -16,7 +16,7 @@ ctrl + {shift + ,alt + }q
 
 # terminal emulator
 alt + Return
-	kitty
+	st
 
 # program launcher
 alt + r
@@ -24,7 +24,7 @@ alt + r
 
 # browser
 alt + b
-	firefox
+	firefox 
 
 # file manager
 alt + p
@@ -47,12 +47,19 @@ alt + shift + Return
     bspc node -s last.local
 
 # focus the next/previous desktop 
-alt + {1,2,3,4,5}
-	bspc desktop -f {1,2,3,4,5}
+alt + {1,2,3,4,5,6}
+    bspc desktop -f {1,2,3,4,5,6}
 
 # focus the node in given direction
 alt + {Left, Down, Up, Right}
 	bspc node -f {west, south, north, east}
+
+# back and forth desktop to focus node
+alt + Tab
+    bspc desktop -f last
+
+alt + shift + {1-6,0}
+    bspc node -d '^{1-6,10}' --follow
 
 ##= Move / Resize =##
 
