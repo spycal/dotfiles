@@ -16,11 +16,11 @@ ctrl + {shift + ,alt + }q
 
 # terminal emulator
 alt + Return
-	st
+	alacritty
 
 # program launcher
 alt + r
-    rofi -show drun -show-icons
+    rofi -show drun 
 
 # browser
 alt + b
@@ -80,5 +80,3 @@ alt + {t, f, g}
 # set the node flags to "sticky"
 alt + y
     bspc node -g sticky
-
-

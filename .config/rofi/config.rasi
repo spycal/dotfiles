@@ -1,9 +1,8 @@
 
 configuration {
-    display-run: "run: ";
-    display-window: "window: ";
-    display-drun: "run: ";
-    modi: "window,run,drun";
+    modi: "drun";
+    display-drun: "Apps";
+    show-icons: true;
 }
 
 @theme "/dev/null"
@@ -14,7 +13,7 @@ configuration {
     bg-alt: #232A2D;
     fg-alt: #BDC3C2;
     contrast: #161D1E;
-    
+
     white: #dadada;
     black: #1e2528;
     lighter-black: #1d2426;
@@ -39,72 +38,76 @@ configuration {
 }
 
 window {
-    width: 300px 480px;
-    location: north west;
-    x-offset: 20;
-    y-offset: 55;
-    border: 1px;
-    border-color: @bg-alt;
+    location: south east;
+    width: 25%;
+    height: 96.2%; 
 }
 
 mainbox {
-    children: [inputbar, listview];
-    padding: 13px;
+    children: [listview, inputbar];
 }
 
 inputbar {
-    children: [prompt, entry];
-    padding: 5px;
+    children: [textbox-search, entry];
+    margin: 0px 18px 18px;
 }
 
-#prompt {  
-    font: "Iosevka bold 11";
-    text-color: @blue;
+textbox-search {
+    str: "";
+    expand: false;
+    text-color: #67b0e8;
     background-color: @bg-alt;
-    padding: 6 0 6 10; // top right bottom left
-    border-radius: 15 0 0 15;
+    margin: @contrast;
+    padding: 8px 12px;
+    border-radius: 6 0 0 6;
+    font: "FontAwesome 14";
 }
 
 entry {
-    font: "Iosevka bold 11";
-    background-color: @bg-alt; 
-    placeholder: "type something...";
-    placeholder-color: @grey;
-    padding: 6px 0px;
-    border-radius: 0 15 15 0;
+    expand: true;
+    padding: 8px;
+    border-radius: 0 6 6 0;
+    background-color: @contrast;
+    placeholder: "Search";
+    placeholder-color: @bg-alt;
 }
 
 listview {
-    lines: 10;
-    padding: 5px;
+    columns: 2;
+    lines: 2;
+    cycle: false;
+    margin: 18px;
     scrollbar: true;
 }
 
 element {
-    padding: 4px 0px;
+	orientation: vertical;
+	padding: 0.5em;
 }
 
-element-icon {
-    size: 28;
-    padding: 4px 6px;
+element-text, element-icon {
+	padding: 0.2em;
+	horizontal-align: 0.5;
+	background-color: inherit;
 }
 
-element-text {
-    highlight: @red;
-    padding: 8px 3px;
-}
+element-text { highlight: #e57474; }
+element-icon { size: 48px; }
+listview, element, element selected, element-text, element-icon { cursor: pointer; }
 
-element-icon selected {
-    background-color: @bg-alt;
-}
-
-element-text selected {
-    background-color: @bg-alt;
+element selected {
+	background-color: @bg-alt;
+	text-color: @fg;
+	border-radius: 6px;
 }
 
 scrollbar {
     handle-width: 0px 4px;
-    handle-color: @green;
-    border: 8px;
+    handle-color: #8ccf7e;
+    border: 0 0 0 14;
 }
+
+
+
+
 

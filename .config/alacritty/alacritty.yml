@@ -1,0 +1,56 @@
+
+env:
+  TERM: xterm-256color
+
+window: 
+  padding: 
+    x: 14
+    y: 14
+
+scrolling:
+  history: 2000
+
+font: 
+  normal: 
+    family: Iosevka Nerd Font
+    style: Regular
+  bold: 
+    family: Iosevka Nerd Font 
+    style: SemiBold
+  italic: 
+    family: Iosevka Nerd Font
+    style: Italic
+  bold_italic: 
+    family: Iosevka Nerd Font
+    style: SemiBold Italic
+
+  size: 11.0
+
+colors:
+  primary:
+    background: "#141b1e"
+    foreground: "#dadada"
+
+  cursor:
+    text: "#dadada"
+    cursor: "#dadada"
+
+  normal:
+    black: "#232a2d"
+    red: "#e57474"
+    green: "#8ccf7e"
+    yellow: "#e5c76b"
+    blue: "#67b0e8"
+    magenta: "#c47fd5"
+    cyan: "#6cbfbf"
+    white: "#b3b9b8"
+
+  bright:
+    black: "#2d3437"
+    red: "#ef7e7e"
+    green: "#96d988"
+    yellow: "#f4d67a"
+    blue: "#71baf2"
+    magenta: "#ce89df"
+    cyan: "#67cbe7"
+    white: "#bdc3c2"

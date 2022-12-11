@@ -9,5 +9,6 @@ alias pf='pfetch'
 alias ls='exa --long'
 alias xq='xbps-query -Rs'
 alias pipes.sh='pipes.sh -t 2'
+alias tree='tree -a'
 
 export PATH="$PATH:$HOME/.cargo/bin:$HOME:$HOME/.local/bin"
